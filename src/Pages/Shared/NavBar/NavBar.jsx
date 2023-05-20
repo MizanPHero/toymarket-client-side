@@ -13,16 +13,6 @@ const NavBar = () => {
       .catch((error) => console.error(error));
   };
 
-  const DropdownMenu = () => {
-    const [isDropOpen, setDropIsOpen] = useState(false);
-
-    const handleDropdownToggle = () => {
-      setDropIsOpen(!isDropOpen);
-    };
-  };
-
-  console.log(user);
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="px-4 py-5 mx-auto bg-white sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-18 lg:px-6">
@@ -150,36 +140,75 @@ const NavBar = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
+                        to="/alltoys"
+                        className={({ isActive }) =>
+                          isActive ? "active" : "default"
+                        }
+                      >
+                        All Toys
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/mytoys"
+                        className={({ isActive }) =>
+                          isActive ? "active" : "default"
+                        }
+                      >
+                        My Toys
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/addtoy"
+                        className={({ isActive }) =>
+                          isActive ? "active" : "default"
+                        }
+                      >
+                        Add a Toy
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
                         to="/blogs"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                        className={({ isActive }) =>
+                          isActive ? "active" : "default"
+                        }
                       >
                         Blogs
-                      </Link>
+                      </NavLink>
                     </li>
-                    {/* <li>
-                        {user ? (
-                          <div className="">
-                            <button onClick={handleLogout} className="mb-4 default">
-                              Sign Out
-                            </button>
+                    <li>
+                      {user ? (
+                        <div className="flex">
+                          <button onClick={handleLogout} className="default">
+                            Sign Out
+                          </button>
+                          <div className="relative">
                             <img
-                              className="w-8 h-8 mr-5 rounded-full lg:ml-7"
+                              className="w-8 h-8 mr-5 rounded-full lg:ml-6"
                               src={user?.photoURL}
                               alt=""
                             />
+                            {user?.displayName && (
+                              <span className="absolute top-0 left-0 p-1 text-xs text-center text-white bg-gray-800 rounded opacity-0 min-w-max hover:opacity-100">
+                                {user.displayName}
+                              </span>
+                            )}
                           </div>
-                        ) : (
-                          <NavLink
-                            to="/login"
-                            className={({ isActive }) =>
-                              isActive ? "active" : "default"
-                            }
-                          >
-                            Login
-                          </NavLink>
-                        )}
-                      </li> */}
+                        </div>
+                      ) : (
+                        <NavLink
+                          to="/login"
+                          className={({ isActive }) =>
+                            isActive ? "active" : "default"
+                          }
+                        >
+                          Login
+                        </NavLink>
+                      )}
+                    </li>
                   </ul>
                 </nav>
               </div>

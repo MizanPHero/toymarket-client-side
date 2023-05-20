@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -16,12 +16,12 @@ const Banner = () => {
               Unleash the power of imagination and embark on thrilling
               adventures with Toy Fusion!
             </p>
-            <a
-              href="#"
+            <Link
+              to={"/alltoys"}
               className="px-4 py-2 text-red-500 bg-transparent border border-red-500 rounded shadow hover:bg-red-500 hover:text-white hover:shadow-lg hover:border-transparent"
             >
               Explore Now
-            </a>
+            </Link>
           </div>
           <div className="justify-center p-8 mt-12 mb-6 ml-0 md:mb-0 md:mt-0 md:ml-12 lg:w-2/3">
             <div className="flex flex-wrap content-center justify-end h-48">
