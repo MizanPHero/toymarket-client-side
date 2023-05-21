@@ -10,7 +10,6 @@ const AllToys = () => {
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
-  console.log(toys);
 
   return (
     <div>

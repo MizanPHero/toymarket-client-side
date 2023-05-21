@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ToyList = ({toy}) => {
-    const {sellerName, toyName, subCategory, price, quantity} = toy;
-    console.log(toy);
+    const {_id, sellerName, toyName, subCategory, price, quantity} = toy;
   return (
     <tr className="border-b ">
       <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
@@ -21,7 +21,7 @@ const ToyList = ({toy}) => {
         {quantity}
       </td>
       <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
-        Details
+       <Link to={`../toy/${_id}`}><button className="btn-primary">Details</button></Link>
       </td>
     </tr>
   );
