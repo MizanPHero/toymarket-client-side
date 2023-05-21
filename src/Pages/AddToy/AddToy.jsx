@@ -8,10 +8,25 @@ const AddToy = () => {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
+    
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    fetch("http://localhost:5000/addtoys", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+            if(result.insertedId){
+                alert('job added');
+                reset(); 
+            }
+        })   
+  };
 
   return (
     <div className="text-center rounded bg-slate-50 my-container">
@@ -46,7 +61,7 @@ const AddToy = () => {
           <input
             className="input-style"
             type="email"
-            value={user?.email}
+            value={user?.email || ''}
             placeholder="Seller Email"
             {...register("sellerEmail", { required: true })}
           />{" "}
