@@ -146,7 +146,7 @@ const AddToy = () => {
         />
         <br />
 
-        <input className="mt-5 btn-primary" type="submit" />
+        <input value="Add Toy" className="mt-5 btn-primary" type="submit" />
       </form>
     </div>
   );
