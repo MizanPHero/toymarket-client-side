@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
     fetch(`http://localhost:5000/myToys/${user?.email}`)
@@ -14,6 +15,18 @@ const MyToys = () => {
         setToys(data);
       });
   }, [user]);
+
+  const handleSort = () => {
+    const sortedToys = [...toys].sort((a, b) => {
+      if (sortOrder === "asc") {
+        return b.price - a.price;
+      } else {
+        return a.price - b.price;
+      }
+    });
+    setToys(sortedToys);
+    setSortOrder(event.target.value);
+  };
 
   const handleDelete = (_id) => {
     console.log(_id);
@@ -55,6 +68,18 @@ const MyToys = () => {
       <h1 className="mx-auto mb-4 text-3xl font-medium text-center text-red-600">
         My Toys
       </h1>
+
+      <div className="text-center">
+        <select
+          value={sortOrder}
+          onChange={handleSort}
+          className="p-2 border rounded"
+        >
+          <option value="asc">Ascending by Price</option>
+          <option value="desc">Descending by Price</option>
+        </select>
+      </div>
+
       <div className="flex flex-col my-container">
         <div className="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
           <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
