@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyToyList = ({toy, handleDelete}) => {
+
     const {_id, sellerName, toyName, subCategory, price, quantity} = toy;
+
   return (
     <tr className="border-b ">
       <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">

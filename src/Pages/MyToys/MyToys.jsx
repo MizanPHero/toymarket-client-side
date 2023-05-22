@@ -53,6 +53,8 @@ const MyToys = () => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              const remaining = toys.filter((toy) => toy._id !== _id);
+              setToys(remaining);
             }
           })
           .catch((error) => {

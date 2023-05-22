@@ -1,14 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
-
-
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateToy = () => {
   const toy = useLoaderData();
-//   const history = useHistory();
+  const navigate = useNavigate();
 
   const {
     _id,
@@ -36,18 +33,17 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((result) => {
 
-        if (result.modifiedCount>0) {
+        if (result.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
             text: "Toy Updated Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           })
-        //   .then((result) => {
-        //     if (result.isConfirmed) {
-        //         history.push("../mytoys"); // Navigate to "/mytoys" page
-        //     }
-        //   });
+          .then(() => {
+            navigate("/mytoys"); // Redirect to "/mytoys" route
+          });
+          
           
         }
       });

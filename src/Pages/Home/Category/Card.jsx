@@ -5,11 +5,8 @@ import { Link } from "react-router-dom";
 const Card = ({ toy }) => {
   const {
     _id,
-    sellerName,
     toyName,
-    subCategory,
     price,
-    quantity,
     rating,
     toyPicture,
     description,
