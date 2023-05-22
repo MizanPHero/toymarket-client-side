@@ -86,13 +86,7 @@ const AllToys = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {
-                    services.map(service => <ServiceCard
-                        key={service._id}
-                        service={service}
-                    ></ServiceCard>)
-                } */}
-
+                  
                     {
                         toys.map(toy => <ToyList
                         key= {toy._id}
