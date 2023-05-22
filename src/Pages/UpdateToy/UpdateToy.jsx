@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 
 import Swal from "sweetalert2";
@@ -59,7 +59,7 @@ const UpdateToy = () => {
   return (
     <div className="text-center rounded bg-slate-50 my-container">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <p className="mb-4 text-3xl font-medium text-center text-red-500">
+        <p className="mb-4 text-3xl font-medium text-center text-red-600">
           Update {toyName}
         </p>
         {/* register your input into the hook by invoking the "register" function */}

@@ -52,7 +52,7 @@ const MyToys = () => {
 
   return (
     <div>
-      <h1 className="mx-auto mb-4 text-3xl font-medium text-center text-red-500">
+      <h1 className="mx-auto mb-4 text-3xl font-medium text-center text-red-600">
         My Toys
       </h1>
       <div className="flex flex-col my-container">

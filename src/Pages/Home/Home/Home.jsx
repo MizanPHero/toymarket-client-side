@@ -1,12 +1,11 @@
 import Banner from "../Banner/Banner";
+import Category from "../Category/Category";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <button className="btn-primary">
-        Solid Button
-      </button>
+      <Category></Category>
     </div>
   );
 };
