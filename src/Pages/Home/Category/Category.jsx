@@ -20,7 +20,7 @@ const Category = () => {
   };
 
   return (
-    <div className="my-container">
+    <div className="mt-10 md:mt-0 my-container">
       <h1 className="mx-auto mb-4 text-3xl font-medium text-center text-red-600">
         Shop Category
       </h1>
@@ -58,7 +58,7 @@ const Category = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-10 m-10">
+      <div className="grid grid-cols-1 mt-8 md:grid-cols-4">
 
         {toys.map((toy) => (
           <Card key={toy._id} toy={toy} />

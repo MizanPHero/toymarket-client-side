@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <section>
-      <div className="py-20 text-gray-800 bg-white">
-        <div className="container flex flex-col items-center mx-auto my-12 md:flex-row md:my-24">
-          <div className="flex flex-col items-start justify-center w-full p-8 space-y-6 lg:w-1/3">
+      <div className="py-2 text-gray-800 bg-white md:pt-20 ">
+        <div className="container flex flex-col items-center mx-auto my-6 md:flex-row md:my-24">
+          <div className="flex flex-col items-start justify-center w-full px-8 py-1 space-y-6 md:p-8 lg:w-1/3">
             <h1 className="p-2 pl-0 text-3xl text-red-500 md:text-5xl tracking-loose">
               Toy Fusion
             </h1>
