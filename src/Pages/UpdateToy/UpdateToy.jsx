@@ -1,22 +1,22 @@
-import React from "react";
 import { useForm } from "react-hook-form";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../useTitle/useTitle";
+import Spinner from "../Home/Home/Spinner";
 
 const UpdateToy = () => {
   const toy = useLoaderData();
   const navigate = useNavigate();
-  useTitle('Update Toy');
 
-  const {
-    _id,
-    toyName,
-    description,
-    quantity,
-    price,
-  } = toy;
+  useTitle("Update Toy");
 
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading") {
+    return <Spinner></Spinner>;
+  }
+
+  const { _id, toyName, description, quantity, price } = toy;
 
   const {
     register,
@@ -25,7 +25,7 @@ const UpdateToy = () => {
     watch,
     formState: { errors },
   } = useForm();
-  
+
   const onSubmit = (data) => {
     fetch(`https://toy-fusion-server-mizanphero.vercel.app/updateToy/${_id}`, {
       method: "PUT",
@@ -34,24 +34,17 @@ const UpdateToy = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-
         if (result.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
             text: "Toy Updated Successfully",
             icon: "success",
             confirmButtonText: "Cool",
-          })
-          .then(() => {
+          }).then(() => {
             navigate("/mytoys"); // Redirect to "/mytoys" route
           });
-          
-          
         }
       });
-    console.log(data);
-
-
   };
 
   return (
@@ -61,8 +54,7 @@ const UpdateToy = () => {
           Update {toyName}
         </p>
         {/* register your input into the hook by invoking the "register" function */}
-        
-        
+
         <div>
           <input
             className="input-style"
@@ -76,7 +68,7 @@ const UpdateToy = () => {
             <span className="ml-4 text-red-500">This field is required</span>
           )}
         </div>
-        
+
         <div>
           <input
             className="input-style"
@@ -91,7 +83,6 @@ const UpdateToy = () => {
           )}
         </div>
 
-        
         <br />
 
         <textarea
