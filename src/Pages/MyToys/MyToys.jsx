@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToyList from "./MyToyList";
 import Swal from "sweetalert2";
+import useTitle from "../../useTitle/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
+
+  useTitle('My Toys');
 
   useEffect(() => {
     fetch(`https://toy-fusion-server-mizanphero.vercel.app/myToys/${user?.email}`)

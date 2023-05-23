@@ -1,11 +1,13 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import StarRating from "./StarRating";
+import useTitle from "../../useTitle/useTitle";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
+  useTitle('Toy Details');
   const {toyName, sellerName, sellerEmail, toyPicture, subCategory, description, quantity, price, rating} = toy;
-  console.log(toy);
+
   return (
     <div>
       <section className="overflow-hidden text-gray-600 body-font">

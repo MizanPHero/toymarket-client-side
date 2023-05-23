@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle} from "@fortawesome/free-brands-svg-icons";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../useTitle/useTitle";
 
 
 const Login = () => {
   const { signIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+  useTitle('Login');
 
   const navigate = useNavigate();
   const location = useLocation();

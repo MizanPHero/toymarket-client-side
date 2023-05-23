@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 const Registration = () => {
   const [error, setError] = useState('');
   const {createUser} = useContext(AuthContext)
+  useTitle('Registration');
 
   const handleSignUp = (event) => {
     event.preventDefault();

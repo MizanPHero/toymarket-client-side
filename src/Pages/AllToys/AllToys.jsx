@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import ToyList from "./toyList";
+import useTitle from "../../useTitle/useTitle";
 
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  useTitle('All Toys');
 
   useEffect(() => {
     fetch("https://toy-fusion-server-mizanphero.vercel.app/alltoys")
