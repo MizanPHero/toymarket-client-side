@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <div className="px-4 py-5 mx-auto bg-white sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-18 lg:px-6">
       <div className="relative flex items-center justify-between">
-        {/* Logo Section */}
+  
         <Link to="/" className="inline-flex items-center flex-1">
           <img className="h-8" src={logoWhite} alt="" />
           <span className="ml-2 text-2xl font-bold tracking-wide text-gray-800">
@@ -25,7 +25,7 @@ const NavBar = () => {
           </span>
         </Link>
 
-        {/* Nav Items Section */}
+     
 
         <ul className="items-center hidden space-x-8 lg:flex">
           <li>

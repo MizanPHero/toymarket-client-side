@@ -5,7 +5,7 @@ const Gallery = () => {
     <div>
       <section className="text-gray-600 body-font">
         <div className="container flex flex-wrap px-5 py-24 mx-auto">
-          <h1 className="mx-auto mb-8 text-3xl font-medium text-center text-red-600">
+          <h1 className="mx-auto mb-8 text-3xl font-semibold text-center text-red-600">
             Toy Gallery
           </h1>
           <div className="flex flex-wrap w-full mb-20">

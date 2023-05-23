@@ -1,56 +1,68 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logoWhite from "../../../assets/logo-red.svg";
 import {
   faTwitter,
   faFacebookSquare,
   faDribbble,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative pt-4 pb-6 my-container bg-blueGray-200">
+    <footer className="relative pt-8 pb-6 my-container bg-blueGray-200">
       <div className="container px-4 mx-auto">
         <div className="flex flex-wrap text-left lg:text-left">
-          <div className="w-full px-4 lg:w-6/12">
-            <h4 className="text-3xl text-orange-600 fonat-semibold">
-              Let's give a review!
-            </h4>
+          <div className="w-full px-4 lg:w-4/12">
+            <Link to="/" className="items-center flex-1 inline-block">
+              <img className="h-8" src={logoWhite} alt="" />
+              <span className="text-2xl font-bold tracking-wide text-gray-800">
+                Toy Fusion
+              </span>
+            </Link>
             <h5 className="mt-0 mb-2 text-lg text-blueGray-600">
-              Tell us your opinion about our recipes
+              Where Imagination Meets Action
             </h5>
-            <div className="mt-6 mb-6 lg:mb-0">
-              <button
-                className="items-center justify-center w-10 h-10 mr-2 font-normal bg-white rounded-full shadow-lg outline-none text-lightBlue-400 align-center focus:outline-none"
-                type="button"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </button>
-              <button
-                className="items-center justify-center w-10 h-10 mr-2 font-normal bg-white rounded-full shadow-lg outline-none text-lightBlue-600 align-center focus:outline-none"
-                type="button"
-              >
-                <FontAwesomeIcon icon={faFacebookSquare} />
-              </button>
-              <button
-                className="items-center justify-center w-10 h-10 mr-2 font-normal text-pink-400 bg-white rounded-full shadow-lg outline-none align-center focus:outline-none"
-                type="button"
-              >
-                <FontAwesomeIcon icon={faDribbble} />
-              </button>
-              <button
-                className="items-center justify-center w-10 h-10 mr-2 font-normal bg-white rounded-full shadow-lg outline-none text-blueGray-800 align-center focus:outline-none"
-                type="button"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </button>
+          </div>
+          <div className="w-full px-4 lg:w-4/12">
+            <h1 className="block mb-2 text-sm font-semibold text-center text-red-600 uppercase">
+              Find Us Social Media
+            </h1>
+            <div>
+              <div className="mt-6 mb-6 text-center lg:mb-0">
+                <button
+                  className="items-center justify-center w-10 h-10 mr-2 font-bold bg-white rounded-full shadow-lg outline-none text-lightBlue-400 align-center focus:outline-none"
+                  type="button"
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </button>
+                <button
+                  className="items-center justify-center w-10 h-10 mr-2 font-bold bg-white rounded-full shadow-lg outline-none text-lightBlue-600 align-center focus:outline-none"
+                  type="button"
+                >
+                  <FontAwesomeIcon icon={faFacebookSquare} />
+                </button>
+                <button
+                  className="items-center justify-center w-10 h-10 mr-2 font-bold text-pink-400 bg-white rounded-full shadow-lg outline-none align-center focus:outline-none"
+                  type="button"
+                >
+                  <FontAwesomeIcon icon={faDribbble} />
+                </button>
+                <button
+                  className="items-center justify-center w-10 h-10 mr-2 font-bold bg-white rounded-full shadow-lg outline-none text-blueGray-800 align-center focus:outline-none"
+                  type="button"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </button>
+              </div>
             </div>
           </div>
-          <div className="w-full px-4 lg:w-6/12">
+          <div className="w-full px-4 lg:w-4/12">
             <div className="flex flex-wrap mb-6 items-top">
               <div className="w-full px-4 ml-auto lg:w-4/12">
-                <span className="block mb-2 text-sm font-semibold text-orange-600 uppercase">
-                  Information
+                <span className="block mb-2 text-sm font-semibold text-red-600 uppercase">
+                  Resources
                 </span>
                 <ul className="list-unstyled">
                   <li>
@@ -58,7 +70,7 @@ const Footer = () => {
                       className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800"
                       href="#"
                     >
-                      Free Recipes
+                      Terms & Policy
                     </a>
                   </li>
                   <li>
@@ -66,7 +78,7 @@ const Footer = () => {
                       className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800"
                       href=""
                     >
-                      Blog
+                      FAQ
                     </a>
                   </li>
                   <li>
@@ -74,7 +86,7 @@ const Footer = () => {
                       className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800"
                       href=""
                     >
-                      Join as Chef
+                      Return Policy
                     </a>
                   </li>
                   <li>
@@ -82,13 +94,14 @@ const Footer = () => {
                       className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800"
                       href=""
                     >
-                      Free Food
+                      Home Delivery
                     </a>
                   </li>
                 </ul>
               </div>
+
               <div className="w-full px-4 lg:w-4/12">
-                <span className="block mb-2 text-sm font-semibold text-orange-600 uppercase">
+                <span className="block mb-2 text-sm font-semibold text-red-600 uppercase">
                   Address
                 </span>
                 <ul className="list-unstyled">
@@ -97,7 +110,7 @@ const Footer = () => {
                       className="block pb-2 text-sm italic font-semibold text-blueGray-600 hover:text-blueGray-800"
                       href=""
                     >
-                      Kitchen Chronicles
+                      Toy Fusion
                     </a>
                   </li>
                   <li>
@@ -140,7 +153,7 @@ const Footer = () => {
                 target="blank"
               >
                 {" "}
-                Kitchen Chronicles by
+                Toy Fusion by
               </a>
               <br />
               <a href="" className="text-blueGray-500 hover:text-blueGray-800">

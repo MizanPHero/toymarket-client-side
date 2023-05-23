@@ -13,7 +13,6 @@ const Category = () => {
       });
   }, [activeTab]);
 
-  console.log(toys);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
