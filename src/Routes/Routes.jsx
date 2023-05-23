@@ -37,12 +37,12 @@ const router = createBrowserRouter([
             {
                 path: "toy/:id",
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+                loader: ({params}) => fetch(`https://toy-fusion-server-mizanphero.vercel.app/toy/${params.id}`)
             },
             {
                 path: "updateToy/:id",
                 element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+                loader: ({params}) => fetch(`https://toy-fusion-server-mizanphero.vercel.app/toy/${params.id}`)
             },
             {
                 path: "blogs",

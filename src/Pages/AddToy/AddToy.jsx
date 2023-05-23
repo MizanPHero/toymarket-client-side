@@ -15,7 +15,7 @@ const AddToy = () => {
     
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addtoys", {
+    fetch("https://toy-fusion-server-mizanphero.vercel.app/addtoys", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

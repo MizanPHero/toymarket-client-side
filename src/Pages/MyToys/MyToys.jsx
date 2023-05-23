@@ -9,7 +9,7 @@ const MyToys = () => {
   const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://toy-fusion-server-mizanphero.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -40,7 +40,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/delToy/${_id}`, {
+        fetch(`https://toy-fusion-server-mizanphero.vercel.app/delToy/${_id}`, {
           method: "DELETE",
         })
           .then((res) => {

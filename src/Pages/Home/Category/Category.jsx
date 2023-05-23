@@ -6,7 +6,7 @@ const Category = () => {
   const [activeTab, setActiveTab] = useState("marvel");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getToysByCategory/${activeTab}`)
+    fetch(`https://toy-fusion-server-mizanphero.vercel.app/getToysByCategory/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
