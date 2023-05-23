@@ -1,8 +1,15 @@
-import React from "react";
 import StarRating from "../../ToyDetails/StarRating";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Card = ({ toy }) => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   const {
     _id,
     toyName,
@@ -11,9 +18,11 @@ const Card = ({ toy }) => {
     toyPicture,
     description,
   } = toy;
+
+
   return (
-    <div>
-      <div className="w-full px-3 py-6">
+    <div data-aos="fade-up">
+      <div  className="w-full px-3 py-6">
         <div className="overflow-hidden bg-white rounded-lg shadow-xl">
           <div
             className="p-4 bg-top bg-no-repeat bg-cover h-80"

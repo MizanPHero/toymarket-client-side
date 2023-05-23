@@ -1,6 +1,13 @@
-import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Gallery = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -23,21 +30,21 @@ const Gallery = () => {
           <div className="flex flex-wrap -m-1 md:-m-2">
             <div className="flex flex-wrap w-1/2">
               <div className="w-1/2 p-1 md:p-2">
-                <img
+                <img data-aos="fade-down-right"
                   alt="gallery"
                   className="block object-cover object-center w-full h-full rounded-lg"
                   src="https://i.ibb.co/5vNKt9Z/500x300.jpg"
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">
-                <img
+                <img data-aos="fade-down"
                   alt="gallery"
                   className="block object-cover object-center w-full h-full rounded-lg"
                   src="https://i.ibb.co/D7V0xZp/501x301.jpg"
                 />
               </div>
               <div className="w-full p-1 md:p-2">
-                <img
+                <img data-aos="fade-up-right"
                   alt="gallery"
                   className="block object-cover object-center w-full h-full rounded-lg"
                   src="https://i.ibb.co/zFpxkCx/600x360.jpg"
@@ -46,21 +53,21 @@ const Gallery = () => {
             </div>
             <div className="flex flex-wrap w-1/2">
               <div className="w-full p-1 md:p-2">
-                <img
+                <img data-aos="fade-down-left"
                   alt="gallery"
                   className="block object-cover object-center w-full h-full rounded-lg"
                   src="https://i.ibb.co/99kHq2W/601x361.jpg"
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">
-                <img
+                <img data-aos="fade-up"
                   alt="gallery"
                   className="block object-cover object-center w-full h-full rounded-lg"
                   src="https://i.ibb.co/jVwSCMp/502x302.jpg"
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">
-                <img
+                <img data-aos="fade-up-left"
                   alt="gallery"
                   className="block object-cover object-center w-full h-full rounded-lg"
                   src="https://i.ibb.co/84tX5km/503x303.jpg"

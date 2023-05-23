@@ -1,26 +1,32 @@
-import React from "react";
 import { useLoaderData } from "react-router-dom";
 import StarRating from "./StarRating";
 import useTitle from "../../useTitle/useTitle";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
   useTitle('Toy Details');
   const {toyName, sellerName, sellerEmail, toyPicture, subCategory, description, quantity, price, rating} = toy;
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <div>
       <section className="overflow-hidden text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap mx-auto lg:w-4/5">
-            <div className="w-5/6 mb-10 overflow-hidden h-1/6 lg:max-w-md lg:w-full md:w-1/2 md:mb-0">
+            <div data-aos="fade-right" className="w-5/6 mb-10 overflow-hidden h-1/6 lg:max-w-md lg:w-full md:w-1/2 md:mb-0">
             <img
               alt="ecommerce"
               className="object-scale-down w-full h-48 rounded  lg:h-[500px]"
               src={toyPicture}
             />
             </div>
-            <div className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
+            <div data-aos="fade-left" className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
               <h2 className="text-sm tracking-widest text-gray-500 title-font">
                 {subCategory.toUpperCase()+' TOY'}
               </h2>

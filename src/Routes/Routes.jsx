@@ -10,6 +10,7 @@ import Registration from "../Pages/Registration/Registration";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import UpdateToy from "../Pages/UpdateToy/UpdateToy";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path:"/",

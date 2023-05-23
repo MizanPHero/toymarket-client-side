@@ -1,6 +1,13 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 const Subscribe = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
-    <div className="mb-24 my-container" >
+    <div data-aos="fade-up" className="mb-24 my-container" >
       <section className="text-gray-600 body-font">
         <div className="mx-auto ">
           <div className="flex flex-col w-full mb-12 text-center">

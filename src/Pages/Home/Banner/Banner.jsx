@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const Banner = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <section>
       <div className="py-2 text-gray-800 bg-white md:pt-20 ">
         <div className="container flex flex-col items-center mx-auto my-6 md:flex-row md:my-24">
-          <div className="flex flex-col items-start justify-center w-full px-8 py-1 space-y-6 md:p-8 lg:w-1/3">
+          <div data-aos="fade-right" className="flex flex-col items-start justify-center w-full px-8 py-1 space-y-6 md:p-8 lg:w-1/3">
             <h1 className="p-2 pl-0 text-3xl text-red-500 md:text-5xl tracking-loose">
               Toy Fusion
             </h1>
@@ -23,7 +32,7 @@ const Banner = () => {
               Explore Now
             </Link>
           </div>
-          <div className="justify-center p-8 mt-12 mb-6 ml-0 md:mb-0 md:mt-0 md:ml-12 lg:w-2/3">
+          <div data-aos="fade-left" className="justify-center p-8 mt-12 mb-6 ml-0 md:mb-0 md:mt-0 md:ml-12 lg:w-2/3">
             <div className="flex flex-wrap content-center justify-end h-48">
               <div>
                 <img
